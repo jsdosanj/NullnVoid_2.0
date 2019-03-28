@@ -1,6 +1,8 @@
 # NullnVoid 2.0
 ## Fallout Terminal Styling Hacking Game
 
+https://docs.gluonhq.com/charm/5.0.1/#netbeans-plugin
+
 You can use the [editor on GitHub](https://github.com/jsdosanj/NullnVoid_2.0/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
