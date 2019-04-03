@@ -1,5 +1,11 @@
 <html>
   <script>
+  /*
+  Problems:
+  1. Can't get the value of the button I press in order to compare it to the winWord
+  2. Sometimes the winWord is not on the gameBoard
+  */
+  
     /*
     This is the createArrayLists() method from the Java code
     */
@@ -7,7 +13,7 @@
     var symbolArray = []
     var wordArray = []
     var winWord;
-    var activeWord;
+    var activeWord = "";
     var lives;
     var score;
     var amtOfSymbols = 0;
@@ -61,13 +67,14 @@
      This is the end of the createArrayLists() method from the Java code
      */
 
-    function getId() {
-    var id = this.id;
-    return id;
+    function getId(objButton) {
+    var val = objButton.value;
+    activeWord = val;
     }
 
     function testFunction() {
-      window.alert(winWord);
+    alert(winWord);
+   
     }
 
     /* This function shuffles our wordArray so we can have non-repeating words appearing in 
@@ -102,9 +109,7 @@
     }
     /* this function is for sending the simCount, however I cannot figure out how to get the word I click on to be compared*/
     function updateCount() {
-    // var getId();
-      var value;
-     value = document.getElementById("gameSpace2").innerText;
+      alert(activeWord);
       document.getElementById("simCount").innerHTML = "There are " + correctLetterCount(winWord, value) + " similarities";
     }
 
@@ -119,15 +124,13 @@
   This is the fillSymbols() method, the fillRandomWords() method and it displays the gameSpace all in one function. It sets up the game board
 */
     function displayGameSpace() {
-      for (var i = 1; i < wordArray.length - 1; i++) {
+      for (var i = 1; i < (2 * (wordArray.length - 1)); i++) {
         if (i % 2 == 0) {
-          document.getElementById("gameSpace" + (i)).innerHTML = '<button onclick="updateCount()"; getId();>' + wordArray[i] + '</button>';
-        } else {
-          document.getElementById("gameSpace" + (i)).innerHTML = symbolArray[0];
-        }
+          document.getElementById("gameSpace" + (i)).innerHTML = '<button onclick="updateCount(); getId(this)">' + wordArray[i-1] + '</button>';
+        } 
       }
     }
-    shuffle(wordArray);
+   // shuffle(wordArray);
     winWord = setWinWord();
 
   </script>
@@ -182,7 +185,7 @@
 
   <body>
     <input type="button" name="TEST" value="TEST" onclick=displayGameSpace()>
-    <input type="button" name="TEST" value="TEST" onclick=testFunction()>
+    <input type="button" name="TEST" value="TEST" onclick='testFunction()'>
     <table>
       <tr>
         <td id="gameSpace1">
@@ -390,4 +393,3 @@
   </body>
 
 </html>
-
