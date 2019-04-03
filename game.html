@@ -16,17 +16,12 @@
     var symbolArray = []
     var wordArray3 = []
     var wordArray4 = [];
-    var wordArray5 = [];
-    var wordArray6 = [];
-    var wordArray7 = [];
-    var wordArray8 = [];
-    var wordArray9 = [];
-    var wordArray10 = [];
     var winWord;
     var activeWord = "";
-    var lives;
+    var lives = 15;
     var score;
     var amtOfSymbols = 0;
+    var countCorrect = 0;
  
     symbolArray.push("!@#");
     symbolArray.push("!@#!");
@@ -40,17 +35,37 @@
     symbolArray.push("!@#!@#!@#!@#");
     symbolArray.push("!@#!@#!@#!@#!");
  
-    wordArray3.push("tin", "dip", "gas","get", "bay", "fix", "row", "hit", "fox", "owe", "cut", "mud", "red", "hut", "ask");
-   
-    wordArray4.push("push", "bush", "pack", "puke", "juke", "lamp", "same", "seen", "dare", "coop", "dirt", "limp", "gimp", "snot");
+    wordArray3.push("tin");
+    wordArray3.push("dip");
+    wordArray3.push("gas");
+    wordArray3.push("get");
+    wordArray3.push("bay");
+    wordArray3.push("fix");
+    wordArray3.push("row");
+    wordArray3.push("hit");
+    wordArray3.push("fox");
+    wordArray3.push("owe");
+    wordArray3.push("cut");
+    wordArray3.push("mud");
+    wordArray3.push("red");
+    wordArray3.push("hut");
+    wordArray3.push("ask");
     
-    wordArray5.push("lasso", "liner", "alien", "miser", "tiger", "tongo", "mango", "hound", "apple", "grape", "serge", "great", "flame", "silky", "plebs");
-    
-    wordArray6.push("middle", "bishop", "waiter", "reform", "bridge", "affect", "winner", "export", "center", "timber", "couple", "system", "ignore", "heaven", "killer");
-    
-    wordArray7.push("lineage", "quarrel", "confuse", "produce", "impulse", "glimpse", "profile", "density", "village", "convict", "mystery", "decline", "gravity", "pyramid", "eyebrow");
-    
-		wordArray8.push("dressing", "movement", "majority", "childish", "building", "offender", "variable", "fragrant", "pressure", "domestic", "amputate", "explicit", "diameter", "slippery", "marriage");
+    wordArray4.push("push");
+    wordArray4.push("bush");
+    wordArray4.push("pack");
+    wordArray4.push("puke");
+    wordArray4.push("juke");
+    wordArray4.push("lamp");
+    wordArray4.push("same");
+    wordArray4.push("seen");
+    wordArray4.push("dare");
+    wordArray4.push("coop");
+    wordArray4.push("core");
+    wordArray4.push("dirt");
+    wordArray4.push("limp");
+    wordArray4.push("gimp");
+    wordArray4.push("snot");
     /*
      This is the end of the createArrayLists() method from the Java code
      */
@@ -88,15 +103,15 @@
       if (firstWord.length !== secondWord.length) {
         return 0;
       }
-      var correctCount = 0;
       var i = 0;
+      var correctCount = 0;
       while (i < firstWord.length) {
         if (firstWord[i] == secondWord[i])
           correctCount++;
         i++;
       }
+            countCorrect=correctCount;
       return correctCount;
- 
     }
     /* this function is for sending the simCount, however I cannot figure out how to get the word I click on to be compared*/
     function updateCount() {
@@ -109,7 +124,12 @@
       var winWord = wordArray3[1];
       return winWord;
     }
- 
+ 	function LifeCount(x){
+     	if (countCorrect !== winWord.length){
+        lives--;
+ 			alert(lives);
+        }
+    }
     /*
   This is the fillSymbols() method, the fillRandomWords() method and it displays the gameSpace all in one function. It sets up the game board
 */
@@ -117,7 +137,7 @@
     var count = 0;
       for (var i = 1; i < 2 * (wordArray3.length - 2); i++) {
         if (i % 2 == 0) {
-          document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray3[count] + ' onclick="getId(this); updateCount();">' + wordArray3[count] + '</button>';
+          document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray3[count] + ' onclick="getId(this); updateCount(); LifeCount();">' + wordArray3[count] + '</button>';
           count++
         } else {
           document.getElementById("gameSpace" + (i)).innerHTML = symbolArray[0];
@@ -160,6 +180,10 @@
       padding: 0 !important;
       font: inherit;
       cursor: pointer;
+    }
+    #livesCount{
+    
+	document.getElementById("livesCount").innerHTML = lives;
     }
  
     button:hover {
@@ -275,7 +299,6 @@
  
       </p>
       <p id="livesCount">
- 
       </p>
       <p id="scoreCount">
  
