@@ -1,10 +1,8 @@
 <html>
-
-
   <script>
     /*
-                   This is the createArrayLists() method from the Java code
-                    */
+    This is the createArrayLists() method from the Java code
+    */
 
     var symbolArray = []
     var wordArray = []
@@ -13,6 +11,7 @@
     var lives;
     var score;
     var amtOfSymbols = 0;
+    
     symbolArray.push("!@#");
     symbolArray.push("!@#!");
     symbolArray.push("!@#!@");
@@ -57,10 +56,15 @@
     wordArray.push("hen");
     wordArray.push("fun");
     wordArray.push("man");
-    wordArray.join('fan');
+    wordArray.join("fan");
     /*
      This is the end of the createArrayLists() method from the Java code
      */
+
+    function getId() {
+    var id = this.id;
+    return id;
+    }
 
     function testFunction() {
       window.alert(winWord);
@@ -96,13 +100,15 @@
       return correctCount;
 
     }
-/* this function is for sending the simCount, however I cannot figure out how to get the word I click on to be compared*/
+    /* this function is for sending the simCount, however I cannot figure out how to get the word I click on to be compared*/
     function updateCount() {
-
-      document.getElementById("simCount").innerHTML = "There are " + correctLetterCount(winWord, this.getAttribute) + " similarities";
+    // var getId();
+      var value;
+     value = document.getElementById("gameSpace2").innerText;
+      document.getElementById("simCount").innerHTML = "There are " + correctLetterCount(winWord, value) + " similarities";
     }
 
-/* this function simply sets a winWord after the wordArray is shuffled */
+    /* this function simply sets a winWord after the wordArray is shuffled */
 
     function setWinWord() {
       var winWord = wordArray[1];
@@ -115,14 +121,15 @@
     function displayGameSpace() {
       for (var i = 1; i < wordArray.length - 1; i++) {
         if (i % 2 == 0) {
-          document.getElementById("gameSpace" + (i)).innerHTML = '<a href= "#" onclick="updateCount()">' + wordArray[i] + '</a>';
+          document.getElementById("gameSpace" + (i)).innerHTML = '<button onclick="updateCount()"; getId();>' + wordArray[i] + '</button>';
         } else {
           document.getElementById("gameSpace" + (i)).innerHTML = symbolArray[0];
         }
       }
     }
- shuffle(wordArray);
+    shuffle(wordArray);
     winWord = setWinWord();
+
   </script>
   <style>
     div {
@@ -153,14 +160,20 @@
       text-decoration: none;
     }
 
-    a:hover {
+  
+
+    button {
+       background:none;
+     color:inherit;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     cursor: pointer;
+    }
+    
+ button:hover {
       background-color: darkgray;
     }
-
-    a:visited {
-      text-decoration: underline;
-    }
-
   </style>
 
   <head>
@@ -377,3 +390,4 @@
   </body>
 
 </html>
+
