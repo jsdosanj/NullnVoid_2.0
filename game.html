@@ -11,21 +11,28 @@
           1. Can't get the value of the button I press in order to compare it to the winWord
           2. Sometimes the winWord is not on the gameBoard
           */
- 
+
     /*
     This is the createArrayLists() method from the Java code
     */
- 
+
     var symbolArray = []
     var wordArray3 = []
-    var wordArray4 = [];
+    var wordArray4 = []
+    var wordArray5 = []
+    var wordArray6 = []
+    var wordArray7 = []
+    var wordArray8 = []
+    var wordArray9 = []
+    var wordArray10 = []
+
     var winWord;
     var activeWord = "";
     var lives = 15;
     var score;
     var amtOfSymbols = 0;
     var countCorrect = 0;
- 
+
     symbolArray.push("!@#");
     symbolArray.push("!@#!");
     symbolArray.push("!@#!@");
@@ -37,59 +44,37 @@
     symbolArray.push("!@#!@#!@#!@");
     symbolArray.push("!@#!@#!@#!@#");
     symbolArray.push("!@#!@#!@#!@#!");
- 
-    wordArray3.push("tin");
-    wordArray3.push("dip");
-    wordArray3.push("gas");
-    wordArray3.push("get");
-    wordArray3.push("bay");
-    wordArray3.push("fix");
-    wordArray3.push("row");
-    wordArray3.push("hit");
-    wordArray3.push("fox");
-    wordArray3.push("owe");
-    wordArray3.push("cut");
-    wordArray3.push("mud");
-    wordArray3.push("red");
-    wordArray3.push("hut");
-    wordArray3.push("ask");
-    
-    wordArray4.push("push");
-    wordArray4.push("bush");
-    wordArray4.push("pack");
-    wordArray4.push("puke");
-    wordArray4.push("juke");
-    wordArray4.push("lamp");
-    wordArray4.push("same");
-    wordArray4.push("seen");
-    wordArray4.push("dare");
-    wordArray4.push("coop");
-    wordArray4.push("core");
-    wordArray4.push("dirt");
-    wordArray4.push("limp");
-    wordArray4.push("gimp");
-    wordArray4.push("snot");
+
+    wordArray3.push("tin", "dip", "gas", "get", "bay", "row", "hit", "fox", "owe", "cut", "mud", "red","hut", "ask");
+    wordArray4.push("push", "bush", "pack", "puke", "snap", "lamp", "juke", "seen", "same", "dare", "coop", "core", "dirt", "limp", "gimp", "snot");
+    wordArray5.push("crown","tract", "torch", "enjoy", "bowel", "bread", "night", "prize", "apple", "plane", "toast", "rumor", "count", "wound", "smash");
+    wordArray6.push("middle", "waiter", "betray", "forbid", "stitch", "treaty", "retain", "center", "timber", "delete", "letter", "export", "harass", "moving", "hotdog");
+    wordArray7.push("lineage", "quarrel", "confuse", "comfort", "reality", "squeeze", "hunting", "mixture", "deficit", "relieve", "scholar", "dynamic", "partner", "pyramid", "eyebrow");
+    wordArray8.push("dressing", "resource", "grateful", "literacy", "majority", "offender", "pressure", "amputate", "diameter", "slippery", "proposal", "security", "occasion", "physical", "instinct");
+    wordArray9.push("craftsman", "effective", "exclusive", "reinforce", "important", "threshold", "influence", "cigarette", "invisible", "allowance", "reception", "marketing", "perforate", "character", "detective");
+    wordArray10.push("continuous", "initiative", "motivation", "difference", "girlfriend", "multimedia", "foundation", "hypothesis", "conviction", "assessment", "attachment", "collection", "confidence", "goverment", "vegetation");
+
     /*
      This is the end of the createArrayLists() method from the Java code
      */
- 
+
     function getId(objButton) {
       var val;
       val = objButton.value;
       activeWord = val;
     //  val = alert(val);
     }
- 
+
     function testFunction() {
       alert(winWord);
       //alert(activeWord);
- 
+
     }
- 
+
     /* This function shuffles our wordArray so we can have non-repeating words appearing in
     the gameSpace */
- 
- 
+
+
     function shuffle(a) {
       var j, x, i;
       for (i = a.length - 1; i > 0; i--) {
@@ -100,7 +85,7 @@
       }
       return a;
     }
- 
+
     /* this is a stand in function for trevors distance code that we need to use to compare the words together */
     function correctLetterCount(firstWord, secondWord) {
       if (firstWord.length !== secondWord.length) {
@@ -120,9 +105,9 @@
     function updateCount() {
       document.getElementById("simCount").innerHTML = "There are " + correctLetterCount(winWord, activeWord) + " similarities";
     }
- 
+
     /* this function simply sets a winWord after the wordArray is shuffled */
- 
+
     function setWinWord() {
       var winWord = wordArray3[1];
       return winWord;
@@ -149,33 +134,33 @@
     }
     shuffle(wordArray3);
     winWord = setWinWord();
- 
+
   </script>
   <style>
     #gameSpace {
-     
+
     }
- 
+
     div {
       font-family: Courier, monospace;
       font-size: 22px;
       color: white;
       text-align: left;
     }
- 
+
     body {
       background-color: black;
       background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
       height: 100vh;
     }
- 
+
     td {
       font-family: Courier, monospace;
       font-size: 22px;
       color: white;
       text-align: left;
     }
- 
+
     button {
       background: none;
       color: inherit;
@@ -185,128 +170,128 @@
       cursor: pointer;
     }
     #livesCount{
-    
+
 	document.getElementById("livesCount").innerHTML = lives;
     }
- 
+
     button:hover {
       background-color: darkgray;
     }
- 
+
   </style>
- 
+
   <head>
- 
+
   </head>
- 
+
   <body onload="displayGameSpace()">
     <input type="button" name="TEST" value="Show winWord" onclick='testFunction()'>
     <div id="gameSpace">
- 
- 
+
+
       <table id="tableSpace">
         <tr>
           <td id="gameSpace1">
- 
+
           </td>
           <td id="gameSpace2">
- 
+
           </td>
           <td id="gameSpace3">
- 
+
           </td>
           <td id="gameSpace4">
- 
+
           </td>
           <td id="gameSpace5">
- 
- 
+
+
           </td>
         </tr>
         <tr>
           <td id="gameSpace6">
- 
+
           </td>
- 
- 
+
+
           <td id="gameSpace7">
- 
+
           </td>
           <td id="gameSpace8">
- 
+
           </td>
           <td id="gameSpace9">
- 
+
           </td>
           <td id="gameSpace10">
- 
+
           </td>
         </tr>
         <tr>
           <td id="gameSpace11">
- 
+
           </td>
           <td id="gameSpace12">
- 
+
           </td>
- 
+
           <td id="gameSpace13">
- 
+
           </td>
           <td id="gameSpace14">
- 
+
           </td>
           <td id="gameSpace15">
- 
+
           </td>
         </tr>
         <tr>
           <td id="gameSpace16">
- 
+
           </td>
           <td id="gameSpace17">
- 
+
           </td>
           <td id="gameSpace18">
- 
+
           </td>
           <td id="gameSpace19">
- 
+
           </td>
           <td id="gameSpace20">
- 
+
           </td>
         </tr>
         <tr>
           <td id="gameSpace21">
- 
+
           </td>
           <td id="gameSpace22">
- 
+
           </td>
           <td id="gameSpace23">
- 
+
           </td>
           <td id="gameSpace24">
- 
+
           </td>
           <td id="gameSpace25">
- 
+
           </td>
-         
+
         </tr>
       </table>
     </div>
     <div id="gameInformation">
       <p id="simCount">
- 
+
       </p>
       <p id="livesCount">
       </p>
       <p id="scoreCount">
- 
+
       </p>
     </div>
   </body>
- 
+
 </html>
