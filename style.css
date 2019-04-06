@@ -65,7 +65,7 @@ header
 {
 	text-align: center;
 	position: relative;
-	top: -100px;
+	top: 100px;
 }
 .start_button a
 {
