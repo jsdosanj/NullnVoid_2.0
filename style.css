@@ -55,7 +55,7 @@ header
 	position: relative;
 	top: 325px;
 }
-.pg_rules ol 
+.pg_rules ol
 {
 	font-family: Courier, monospace;
 	font-size: 18;
@@ -67,7 +67,7 @@ header
 	position: relative;
 	top: -100px;
 }
-.start_button a 
+.start_button a
 {
 	text-decoration: none;
 	font-family: Courier, monospace;
@@ -84,9 +84,9 @@ header
 {
 	text-align: center;
 	position: relative;
-	top: 100px;
+	top: 150px;
 }
-.column_header_pn p 
+.column_header_pn p
 {
 	float: left;
 	margin-left: 200px;
@@ -96,14 +96,14 @@ header
 	float: right;
 	margin-right: 200px;
 }
-.faq_question_one ul li 
+.faq_question_one ul li
 {
 	list-style: none;
 	font-family: Courier, monospace;
 	font-size: 18;
 	color: white;
 }
-.faq_answers_lang ul li 
+.faq_answers_lang ul li
 {
 	list-style: none;
 	font-family: Courier, monospace;
@@ -137,7 +137,22 @@ header
 	font-size: 18;
 	color: white;
 }
-.faq_answers_inspiration ul li 
+.faq_answers_inspiration ul li
+{
+	list-style: none;
+	font-family: Courier, monospace;
+	font-size: 18;
+	color: white;
+	margin-left: 100px;
+}
+.faq_question_four ul li
+{
+	list-style: none;
+	font-family: Courier, monospace;
+	font-size: 18;
+	color: white;
+}
+.faq_answers_challenge ul li
 {
 	list-style: none;
 	font-family: Courier, monospace;
@@ -240,3 +255,59 @@ header
 	color: white;
 	margin-left: 25px;
 }
+.home_button
+{
+	position:relative;
+	top: 125px;
+}
+footer a
+{
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	font-size: 2vw;
+	font-family: Courier, monospace;
+}
+footer a:hover
+{
+	background: white;
+	color: black;
+	text-decoration: none;
+}
+.about_title
+{
+	text-align: center;
+}
+.about_title h2
+{
+	color: white;
+	font-family: Courier, monospace;
+}
+.index_title header /*The following code block was used and adapted from https://css-tricks.com/snippets/css/typewriter-effect/ */
+{
+	overflow: hidden;
+	border-right: 3px solid white;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: typing 5s steps(30, end), blink-caret .5s step-end infinite;
+}
+@keyframes typing
+{
+	from {
+		width: 0
+			 }
+	to {
+		width: 85%
+     }
+}
+@keyframes blink-caret
+{
+	from, to
+			{
+		border-color: transparent
+		  }
+	50% {
+	  border-color: white;
+	    }
+}
+/*this is the end of this block of code*/
