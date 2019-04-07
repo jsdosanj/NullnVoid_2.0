@@ -117,7 +117,7 @@
  	function LifeCount(x){
      	if (countCorrect !== winWord.length){
         lives--;
- 			alert(lives);
+ 			document.getElementById("livesCount").innerHTML = "You have " + lives + " lives remaining";
         }
     }
     /*
@@ -170,10 +170,6 @@
       padding: 0 !important;
       font: inherit;
       cursor: pointer;
-    }
-    #livesCount{
-
-	document.getElementById("livesCount").innerHTML = lives;
     }
 
     button:hover {
