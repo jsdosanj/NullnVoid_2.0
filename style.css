@@ -311,3 +311,17 @@ footer a:hover
 	    }
 }
 /*this is the end of this block of code*/
+.home_button
+{
+	text-align: center;
+}
+table#tableSpace
+{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+table tr td
+{
+	padding: 10px;
+}
