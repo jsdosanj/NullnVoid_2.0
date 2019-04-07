@@ -45,7 +45,7 @@ p
 header
 {
 	font-family: Courier, monospace;
-	font-size: 26;
+	font-size: 2vw;
 	color: white;
 	text-align: Center;
 	text-shadow: 0 0 20px #C8C8C8;
@@ -84,7 +84,7 @@ header
 {
 	text-align: center;
 	position: relative;
-	top: 150px;
+	top: 200px;
 }
 .column_header_pn p
 {
@@ -128,7 +128,7 @@ header
 }
 .index_title header
 {
-	font-size: 200;
+	font-size: 10vw;
 }
 .faq_question_three ul li
 {
@@ -257,8 +257,9 @@ header
 }
 .home_button
 {
-	position:relative;
-	top: 125px;
+	position:absolute;
+	top: 0px;
+	text-align: center;
 }
 footer a
 {
@@ -311,10 +312,6 @@ footer a:hover
 	    }
 }
 /*this is the end of this block of code*/
-.home_button
-{
-	text-align: center;
-}
 table#tableSpace
 {
 	text-align: center;
@@ -324,4 +321,11 @@ table#tableSpace
 table tr td
 {
 	padding: 10px;
+}
+.home_button_onPG a
+{
+	position:absolute;
+	top: -454px;
+	left: 16px;
+	text-align: center;
 }
