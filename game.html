@@ -7,29 +7,21 @@
   </head>
   <script>
     /*
-                      Problems:
-                      1. Can't get the value of the button I press in order to compare it to the winWord
-                      2. Sometimes the winWord is not on the gameBoard
-                    Problems:
-                      1. Can't get the value of the button I press in order to compare it to the winWord
-                      2. Sometimes the winWord is not on the gameBoard
-                      */
-    /*
-    This is the createArrayLists() method from the Java code
-    */
-    var symbolArray = []
-    var wordArray3 = []
-    var wordArray4 = []
-    var wordArray5 = []
-    var wordArray6 = []
-    var wordArray7 = []
-    var wordArray8 = []
-    var wordArray9 = []
-    var wordArray10 = []
-    var winWord;
+            This is the createArrayLists() method from the Java code
+            */
+    var symbolArray = [];
+    var wordArray3 = [];
+    var wordArray4 = [];
+    var wordArray5 = [];
+    var wordArray6 = [];
+    var wordArray7 = [];
+    var wordArray8 = [];
+    var wordArray9 = [];
+    var wordArray10 = [];
+    var winWord = "";
     var activeWord = "";
-    var lives = 15;
-    var score;
+    var lives = 25;
+    var score = 0;
     var amtOfSymbols = 0;
     var countCorrect = 0;
     var difCount = 0;
@@ -44,7 +36,7 @@
     symbolArray.push("!@#!@#!@#!@");
     symbolArray.push("!@#!@#!@#!@#");
     symbolArray.push("!@#!@#!@#!@#!");
-    wordArray3.push("tin", "dip", "gas", "get", "bay", "row", "hit", "fox", "owe", "cut", "mud", "red",);
+    wordArray3.push("tin", "dip", "gas", "get", "bay", "row", "hit", "fox", "owe", "cut", "mud", "red");
     wordArray4.push("push", "bush", "pack", "puke", "snap", "lamp", "juke", "seen", "same", "dare", "coop", "core");
     wordArray5.push("crown", "tract", "torch", "enjoy", "bowel", "bread", "night", "prize", "apple", "plane", "toast", "rumor");
     wordArray6.push("middle", "waiter", "betray", "forbid", "stitch", "treaty", "retain", "center", "timber", "delete", "letter", "export");
@@ -62,12 +54,14 @@
       //  val = alert(val);
     }
 
-    function testFunction() {
-      alert(winWord);
-      //alert(activeWord);
-    }
-    /* This function shuffles our wordArray so we can have non-repeating words appearing in
-    the gameSpace */
+    /*
+        function testFunction() {
+          alert(winWord);
+          alert(activeWord);
+        }
+        /* This function shuffles our wordArray so we can have non-repeating words appearing in
+        the gameSpace */
+
     function shuffle(a) {
       var j, x, i;
       for (i = a.length - 1; i > 0; i--) {
@@ -78,7 +72,7 @@
       }
       return a;
     }
-    /* this is a stand in function for trevors distance code that we need to use to compare the words together */
+
     function correctLetterCount(firstWord, secondWord) {
       if (firstWord.length !== secondWord.length) {
         return 0;
@@ -131,23 +125,50 @@
     function LifeCount() {
       if (countCorrect !== winWord.length) {
         lives--;
+      } else {
+        score++;
+      }
+
+      if (lives == 0) {
+      clearTable();
+        document.getElementById("simCount").innerHTML = "YOU LOSE!";
+        document.getElementById("refresh").innerHTML = '<input type = "button" id="refresh" value="START OVER" onclick="window.location.reload()">';
+
       }
       document.getElementById("livesCount").innerHTML = "Lives: " + lives;
+      document.getElementById("scoreCount").innerHTML = "Score: " + score;
     }
 
     function recognizeWin() {
       if (countCorrect == winWord.length) {
         increaseDifficulty();
         displayGameSpace();
+        document.getElementById("simCount").innerHTML = "There are 0 similarities"; 
+        
+        if (score == 8) {
+         clearTable();
+      document.getElementById("simCount").innerHTML = "YOU WIN!";
+        document.getElementById("refresh").innerHTML = '<input type = "button" id="refresh" value="START OVER" onclick="window.location.reload()">';
       }
+     
+    }
     }
 
     function increaseDifficulty() {
       difCount++;
     }
+
+    function clearTable() {
+      var Parent = document.getElementById("tableSpace");
+      while (Parent.hasChildNodes()) {
+        Parent.removeChild(Parent.firstChild);
+      }
+    }
+
     /*
   This is the fillSymbols() method, the fillRandomWords() method and it displays the gameSpace all in one function. It sets up the game board
 */
+
     function displayGameSpace() {
       var count = 0;
       if (difCount == 0) {
@@ -173,9 +194,9 @@
           }
         }
       } else if (difCount == 2) {
-shuffle(wordArray5);
+        shuffle(wordArray5);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length  + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray5.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray5[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray5[count] + '</button>';
             count++
@@ -184,9 +205,9 @@ shuffle(wordArray5);
           }
         }
       } else if (difCount == 3) {
-shuffle(wordArray6);
+        shuffle(wordArray6);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray6.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray6[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray6[count] + '</button>';
             count++
@@ -195,9 +216,9 @@ shuffle(wordArray6);
           }
         }
       } else if (difCount == 4) {
-shuffle(wordArray7);
+        shuffle(wordArray7);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length  + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray7.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray7[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray7[count] + '</button>';
             count++
@@ -206,9 +227,9 @@ shuffle(wordArray7);
           }
         }
       } else if (difCount == 5) {
-shuffle(wordArray8);
+        shuffle(wordArray8);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length  + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray8.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray8[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray8[count] + '</button>';
             count++
@@ -217,9 +238,9 @@ shuffle(wordArray8);
           }
         }
       } else if (difCount == 6) {
-shuffle(wordArray9);
+        shuffle(wordArray9);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length  + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray9.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray9[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray9[count] + '</button>';
             count++
@@ -228,9 +249,9 @@ shuffle(wordArray9);
           }
         }
       } else if (difCount == 7) {
-shuffle(wordArray10);
+        shuffle(wordArray10);
         setWinWord();
-        for (var i = 1; i < 2 * (wordArray4.length  + 1); i++) {
+        for (var i = 1; i < 2 * (wordArray10.length + 1); i++) {
           if (i % 2 == 0) {
             document.getElementById("gameSpace" + (i)).innerHTML = '<button value=' + wordArray10[count] + ' onclick="getId(this); updateCount(); LifeCount(); recognizeWin();">' + wordArray10[count] + '</button>';
             count++
@@ -243,7 +264,14 @@ shuffle(wordArray10);
 
   </script>
   <style>
-    #gameSpace {}
+    #refresh {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0 !important;
+      font: inherit;
+      cursor: pointer;
+    }
 
     div {
       font-family: Courier, monospace;
@@ -385,6 +413,9 @@ shuffle(wordArray10);
       <p id="simCount">
 
       </p>
+      <p id="refresh">
+
+      </p>
       <p id="livesCount">
       </p>
       <p id="scoreCount">
@@ -399,4 +430,5 @@ shuffle(wordArray10);
       </div>
     </footer>
   </body>
+
 </html>
