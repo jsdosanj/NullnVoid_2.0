@@ -1,40 +1,12 @@
 # NullnVoid 2.0
 ## Fallout Terminal Styling Hacking Game
 
-https://docs.gluonhq.com/charm/5.0.1/#netbeans-plugin
+### Inspiration
+- All of us have grown up playing video games and this website and game is a homage to one of our favorites, Fallout.
+1. What was the biggest challenge you faced as a team with this project?
+- Trying to package our original project in java and javaFX to run inside an applet inside a web browser.
+- Making the switch from our original language with java and javaFX, to a more robust and better integrated javaScript to help run our game on our website.
+2. History and Future
+- We originally developed this program in JavFX, but had issues packaging and running it as a standalone program. So, we decided to translate the project from JavaFX to JavaScript, and we were able to do it in less than 3 weeks. Now, our website and game are integrated and we are working on getting a standalone version of our game up for download. We are also looking into setting up a leaderboard either thru MongoDB or phpMyAdmin. This is something that we will develop if time permits before our release deadline of April 16th, 2019.
 
-You can use the [editor on GitHub](https://github.com/jsdosanj/NullnVoid_2.0/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jsdosanj/NullnVoid_2.0/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## We hope you enjoy our game, and please share it with your friends, and let us know of any updates you would like to see in the future!!!
