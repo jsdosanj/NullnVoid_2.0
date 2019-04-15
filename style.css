@@ -7,7 +7,7 @@ body
 }
 p
 {
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 	text-align: Center;
@@ -15,7 +15,6 @@ p
 .nav-menu
 {
 	text-align: center;
-	position: relative;
 	top: 50px;
 }
 .nav-menu li
@@ -30,7 +29,7 @@ p
 	text-align: center;
 	font-size: 18px;
 	font-size: 2vw;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 }
 .nav-menu li a:hover
 {
@@ -57,7 +56,7 @@ header
 }
 .pg_rules ol
 {
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 }
@@ -70,7 +69,7 @@ header
 .start_button a
 {
 	text-decoration: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 48;
 	color: white;
 	text-align: Center;
@@ -99,14 +98,14 @@ header
 .faq_question_one ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 }
 .faq_answers_lang ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 	margin-left: 100px;
@@ -114,14 +113,14 @@ header
 .faq_question_two ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 }
 .faq_answers_update ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 	margin-left: 100px;
@@ -133,14 +132,14 @@ header
 .faq_question_three ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 }
 .faq_answers_inspiration ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 	margin-left: 100px;
@@ -148,14 +147,14 @@ header
 .faq_question_four ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 }
 .faq_answers_challenge ul li
 {
 	list-style: none;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 	font-size: 18;
 	color: white;
 	margin-left: 100px;
@@ -172,7 +171,7 @@ footer a
 	color: white;
 	font-size: 18px;
 	font-size: 2vw;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 }
 footer a:hover
 {
@@ -187,7 +186,7 @@ footer a:hover
 .about_title h2
 {
 	color: white;
-	font-family: Courier, monospace;
+	font-family: 'VT323', Courier;
 }
 .index_title header /*The following code block was used and adapted from https://css-tricks.com/snippets/css/typewriter-effect/ */
 {
